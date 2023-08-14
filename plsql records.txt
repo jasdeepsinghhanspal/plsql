@@ -1,0 +1,15 @@
+create table customers(id int,name varchar(25),age int,address varchar(25),salary int);
+insert into customers values(1,'baskar',25,'bangalore',80000);
+insert into customers values(2,'amit0',40,'bangalore',70000);
+
+
+DECLARE 
+   customer_rec customers%rowtype; 
+BEGIN 
+   SELECT * into customer_rec 
+   FROM customers 
+   WHERE id = 1;  
+   dbms_output.put_line('Customer ID: ' || customer_rec.id); 
+   dbms_output.put_line('Customer Name: ' || customer_rec.name); 
+   dbms_output.put_line('Customer Salary: ' || customer_rec.salary); 
+END; 
